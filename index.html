@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<! meta needed for bootstrap >
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<! meta added for hebrew in firefox >
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"/>
+		<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+		<script src="js/leaflet-measure.js"></script>
+		<link rel="stylesheet" href="css/leaflet-measure.css">
+		<script src="js/L.Control.MousePosition.js"></script>
+		<link rel="stylesheet" href="css/L.Control.MousePosition.css">
+		<!relative path to geojson layer and stylesheet>
+		<!script type="text/javascript" src="data/BSstat.geojson"></script>
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<title>איחור ממוצע לפי אזור באר שבע</title>
+	</head>
+	<body>
+		<div id="map" style="width: 100%; height: 100%;">
+			<script src="js/map.js"></script>			
+		</div>
+		<! a container and infromation for the legend >
+		<div class="container">
+			<button id="legendbut" type="button" class="btn btn-info" data-toggle="collapse" data-target="#legend2">Legend</button>
+			<div id="legend2" class="collapse">
+			<h3>Beer Sheva Time Variation</h3>
+			<p>The map shows time variation between real-time </p>
+			<p>bus location data and bus schedules.</p>
+			<p>real-time data was collected over a week in July 2017</p>
+			<p>the data was collected using the <b>R</b> programming language, </p>
+			<p>with HTTP POST querying Israel's Ministery Of</p>
+			<p>Transportation's server to query the server and recieve</p>
+			<p>a response containing the <a href="http://user47094.vs.easily.co.uk/siri/documentation.htm">SIRI</a> data transfer protocol.</p>
+			<p>More informatin about the study can be found <a href="http://raphael.geography.ad.bgu.ac.il/GAMESLab/190-2/estimation-of-public-transportation-service-reliability/">HERE</a>.</p>
+			<p>________________________________________________________</p>
+			<p>The popup for each hexagon states the number </p>
+			<p>of observations collected and compared within it, </p>
+			<p>the mean time variation inside the hexagon and </p>
+			<p>the range of time varition in minutes between the smallest</p>
+			<p>(earliset compared to schedule) and largest observation in the area.</p>
+			<p> gray hexagons will have no observations, and therefore no popup.</p>
+			<p>________________________________________________________</p>
+			<p>As you may have noticed both the Legend and the</br>
+			Layer+Tile list are collapsable, the data layer can be turned off</br>
+			and more tile layers are available for viewing. </p>
+			<p>________________________________________________________</p>
+			<b>Mean Time Variation by color: </b><br><br>
+			<i style="background-color: #b30000"></i><p><b>Late</b> (More than 1 Minute)</p>
+			<i style="background-color: #33ccff"></i><p><b>On Time</b></p>
+			<i style="background-color: #2eb82e"></i><p><b>Early</b> (More than 1 Minute)</p>
+			<i style="background-color: gray"></i><p style ="align:'left';"><b>No Observations</b></p>
+			</div>
+		</div>
+	</body>
+</html>
